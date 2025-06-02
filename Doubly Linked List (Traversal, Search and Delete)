@@ -1,0 +1,80 @@
+
+# ExNo: 11.3 Doubly Linked List (Traversal)
+### Aim: To Write a python program to print the elements in forward and reverse direction in doubly linked list. 
+
+### Algorithm:
+
+STEP 1: Start.
+
+STEP 2: Create a Node class with data, next, and prev attributes.
+
+STEP 3: Create a DoublyLinkedList class with a head pointer.
+
+STEP 4: Define a push method to insert a new node at the beginning of the list.
+
+STEP 5: Define an append method to insert a new node at the end of the list.
+
+STEP 6: Define a printList method to traverse and print the list forward and backward.
+
+STEP 7: In the main program, create a DoublyLinkedList object, add nodes using push and append, then print the list.
+
+
+
+### Program:
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+  
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+        
+    def append(self, new_data):
+        new_node = Node(new_data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+        new_node.prev = last
+        return
+  
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        last = None
+        while node:
+            print(node.data)
+            last = node
+            node = node.next
+
+        print("\nTraversal in reverse direction")
+        while last:
+            print(last.data)
+            last = last.prev
+  
+llist = DoublyLinkedList()
+  
+llist.append(6)
+llist.push(7)
+llist.push(1)
+llist.append(4)
+print("Created DLL is: ")
+llist.printList(llist.head)
+
+```
+### OUTPUT:
+![image](https://github.com/user-attachments/assets/227de075-f37d-4d0a-8d9b-417a47152de7)
+
+### Result: Thus, the given program is implemented and executed successfully .
