@@ -1,0 +1,70 @@
+
+# ExNo: 11.4 Doubly Linked List (Insertion and all operation)
+
+- **Name:** Nikkesh V  
+- **Registration Number:** 212222050042
+
+### Aim: To Type a python function to insert words at the beginning and display the sentence in forward and reverse direction. 
+
+### Algorithm:
+
+STEP 1: Start.
+
+STEP 2: Create a Node class with data, next, and prev attributes.
+
+STEP 3: Create a DoublyLinkedList class with a head pointer.
+
+STEP 4: Define a push method to add a new node at the beginning of the list.
+
+STEP 5: Define a printList method to print the list forward and backward.
+
+STEP 6: In the main program, read the number of words, use push to add each word at the start.
+
+STEP 7: Call printList to display the list in forward and reverse order, then stop.
+
+### Program:
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+  
+    def push(self, new_data):
+        new_node=Node(new_data)
+        new_node.next=self.head
+        if self.head is not None:
+            self.head.prev=new_node
+        self.head=new_node
+        
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        while node:
+          
+            print(node.data, end=" ")
+            last = node
+            node = node.next
+        print("\nTraversal in reverse direction")
+        while last:
+           
+            print(last.data, end=" ")
+            last = last.prev
+            
+llist = DoublyLinkedList()
+  
+x = int(input("Enter the number of words to display.\n"))
+for i in range(x):
+    a = input("Enter the data to push\n")
+    llist.push(a)
+
+llist.printList(llist.head)
+
+```
+### OUTPUT:
+![image](https://github.com/user-attachments/assets/69ed985e-6b60-4d5f-815a-6f7f983bcead)
+
+### Result: Thus, the given program is implemented and executed successfully .
