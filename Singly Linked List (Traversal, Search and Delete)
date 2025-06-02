@@ -1,0 +1,64 @@
+
+# ExNo: 11.1 Singly Linked List (Traversal, Search and Delete)
+
+- **Name:** Nikkesh V  
+- **Registration Number:** 212222050042
+
+### Aim: To Write a function to traverse the linked list and display it in the following format.
+### Algorithm:
+
+STEP 1: Start.
+
+STEP 2: Create a Node class.
+
+STEP 3: Create a SinglyLinkedList class.
+
+STEP 4: Define a method addNode(data).
+
+STEP 5: Define a method display().
+
+STEP 6: In the main program, create an object of SinglyLinkedList, read the number of nodes, add nodes using addNode, and call display().
+
+STEP 7: End.
+
+### Program:
+```
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+ 
+#Creating addNode() to add newly created nodes.
+    def addNode(self, data):
+        if self.tail is None:
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            self.tail.next = Node(data)
+            self.tail = self.tail.next
+
+ #Creating display() to print newly created nodes via traversing.
+    def display(self):
+        current=self.head
+        while current is not None:
+            print(current.data,end=" ")
+            current=current.next
+            
+ 
+s = SinglyLinkedList()
+n = int(input())
+for i in range(n):
+    data=input()
+    s.addNode(data)
+s.display()
+```
+### OUTPUT:
+
+![image](https://github.com/user-attachments/assets/a61bf8f9-da12-411a-8c12-905abbd4a15a)
+
+### Result: Thus, the given program is implemented and executed successfully .
