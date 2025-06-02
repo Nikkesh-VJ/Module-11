@@ -1,6 +1,6 @@
+- **Name:** Nikkesh V  
+- **Registration Number:** 212222050042
 # 19CS301-Module11
-### Register No - 212222050042
-### Name - Nikkesh V
 
 # ExNo: 11.1 Singly Linked List (Traversal, Search and Delete)
 ### Aim: To Write a function to traverse the linked list and display it in the following format.
