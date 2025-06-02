@@ -1,0 +1,72 @@
+
+# ExNo: 11.2 Singly Linked List (Insertion and all operation)
+
+- **Name:** Nikkesh V  
+- **Registration Number:** 212222050042
+### Aim: To Write a python program to insert an element at the starting of the singly linked list.
+
+### Algorithm:
+
+STEP 1: Start.
+
+STEP 2: Define a Node class to hold data and a reference to the next node.
+
+STEP 3: Define a CreateList class to manage the linked list with a head pointer.
+
+STEP 4: In the addAtStart method, create a new node, link it to the current head, and update the head to this new node.
+
+STEP 5: In the display method, traverse from the head and print each node's data; if the list is empty, print a message.
+
+STEP 6: Create an object of the CreateList class and call addAtStart multiple times to add data to the front of the list.
+
+STEP 7: Call the display method after each insertion to show the current state of the list and stop.
+
+### Program:
+```
+class Node:    
+  def __init__(self,data):    
+    self.data = data   
+    self.next = None   
+     
+class CreateList:    
+  def __init__(self):    
+    self.head = None   
+     
+        
+  def addAtStart(self,data):    
+    new_node =Node(data)
+    new_node.next=self.head
+    self.head=new_node
+     
+  def display(self):    
+    current = self.head    
+    if self.head is None:    
+      print("List is empty")  
+      return
+    else:    
+        print("Adding nodes to the start of the list: ")   
+        print(current.data) 
+        while(current.next != None):    
+            current = current.next  
+            print(current.data)   
+        
+     
+
+cl = CreateList()  
+      
+cl.addAtStart(1)    
+cl.display()    
+     
+cl.addAtStart(2)    
+cl.display()    
+     
+cl.addAtStart(3)    
+cl.display()    
+      
+cl.addAtStart(4)    
+cl.display()    
+```
+### OUTPUT:
+![image](https://github.com/user-attachments/assets/1be029f8-d994-4aaa-bb21-dc32ae811476)
+
+### Result: Thus, the given program is implemented and executed successfully .
